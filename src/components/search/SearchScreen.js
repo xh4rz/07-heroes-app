@@ -6,7 +6,7 @@ import { HeroCard } from '../heroes/HeroCard';
 export const SearchScreen = () => {
 	const heroesFiltered = heroes;
 
-	const [formValues, handleInputChange, reset] = useForm({
+	const [formValues, handleInputChange] = useForm({
 		searchText: ''
 	});
 
@@ -15,7 +15,6 @@ export const SearchScreen = () => {
 	const handleSearch = (e) => {
 		e.preventDefault();
 		console.log(searchText);
-		reset();
 	};
 
 	return (
@@ -39,7 +38,7 @@ export const SearchScreen = () => {
 						/>
 						<button
 							type="submit"
-							className="btn n-1 btn-block btn-outline-primary"
+							className="btn m-1 btn-block btn-outline-primary"
 						>
 							Search...
 						</button>
