@@ -27,9 +27,18 @@ export const Navbar = () => {
 					>
 						DC
 					</NavLink>
+
+					<NavLink
+						activeClassName="active"
+						className="nav-item nav-link"
+						exact
+						to="/search"
+					>
+						Search
+					</NavLink>
 				</div>
 			</div>
-            
+
 			<div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
 				<ul className="navbar-nav ml-auto">
 					<NavLink
