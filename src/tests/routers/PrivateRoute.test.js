@@ -6,21 +6,24 @@ import { MemoryRouter } from 'react-router';
 describe('Pruebas en <PrivateRoute />', () => {
 	const props = {
 		location: {
-			patname: '/marvel'
+			pathname: '/marvel'
 		}
 	};
 
-	test('debe de mostrar el componente si está autenticado y guardar localStorage', () => {});
+	Storage.prototype.setItem = jest.fn();
 
-	const wrapper = mount(
-		<MemoryRouter>
-			<PrivateRoute
-				isAuthenticated={true}
-				component={() => <span>Listo!</span>}
-				{...props}
-			/>
-		</MemoryRouter>
-	);
+	test('debe de mostrar el componente si está autenticado y guardar localStorage', () => {
+		const wrapper = mount(
+			<MemoryRouter>
+				<PrivateRoute
+					isAuthenticated={true}
+					component={() => <span>Listo!</span>}
+					{...props}
+				/>
+			</MemoryRouter>
+		);
 
-	expect(wrapper.find('span').exists()).toBe(true);
+		expect(wrapper.find('span').exists()).toBe(true);
+		expect(localStorage.setItem).toHaveBeenCalledWith('lastPath', '/marvel');
+	});
 });
