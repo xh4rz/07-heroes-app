@@ -1,9 +1,9 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { MemoryRouter, Router } from 'react-router';
-import { AuthContext } from '../../auth/AuthContext';
-import { Navbar } from '../../components/ui/Navbar';
-import { types } from '../../types/types';
+import { AuthContext } from '../../../auth/AuthContext';
+import { Navbar } from '../../../components/ui/Navbar';
+import { types } from '../../../types/types';
 
 const { mount } = require('enzyme');
 
